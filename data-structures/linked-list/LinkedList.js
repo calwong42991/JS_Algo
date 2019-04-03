@@ -1,16 +1,16 @@
-import { LinkedListNode } from './LinkedListNode';
 import { Comparator } from '../../utils/comparator';
+import { LinkedListNode } from './LinkedListNode';
 
 export default class LinkedList {
 
   constructor(comparatorFunction) {
     this.head = null;
     this.tail = null;
-    this.compare = new Comparator(comparatorFunction);
+    this.compare = Comparator(comparatorFunction);
   }
 
   prepend(value) {
-    const newNode = new LinkedListNode(value, this.head);
+    const newNode = LinkedListNode(value, this.head);
     this.head = newNode;
 
     if (!this.tail) {
@@ -20,7 +20,7 @@ export default class LinkedList {
   }
 
   append(value) {
-    const newNode = new LinkedListNode(value);
+    const newNode = LinkedListNode(value);
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
@@ -154,5 +154,7 @@ export default class LinkedList {
 
     return this;
   }
-
 }
+
+let link = new LinkedList();
+console.log(link)
